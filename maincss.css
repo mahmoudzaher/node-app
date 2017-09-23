@@ -1,0 +1,34 @@
+input#inid {
+    display: none;
+}
+label.lableclass {
+  border: 1px;
+border-radius: 25px;
+padding: 1%;
+background: turquoise;
+}
+button#hht {
+    border: 1px;
+    border-radius: 25px;
+    padding: 1%;
+    background: turquoise;
+}
+img#logoclass {
+    padding-left: 40%;
+    padding-top: 5%;
+}
+.divclass {
+    width: 100%;
+}
+
+table#table1 {
+    border-collapse: collapse;
+        margin-left: 42%;
+}
+td {
+    padding: 10px 10px;
+    border: 1px solid;
+}
+.newdiv {
+    width: 100%;
+}
