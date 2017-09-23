@@ -16,7 +16,7 @@ var readold =fs.readFileSync('files.json');
 files=JSON.parse(readold);
 files.push(file);
 fs.writeFileSync('files.json',JSON.stringify(files));
-res.render('dynamic.hbs');
+
 };
 var deletefile =(name)=>{
   var oldfiles=[];
@@ -25,7 +25,7 @@ var deletefile =(name)=>{
   oldfiles=JSON.parse(readold);
   files=oldfiles.filter((file)=>file.name !== name);
 fs.writeFileSync('files.json',JSON.stringify(files));
-fs.unlinkSync("./uploads/"+name);
+fs.unlinkSync("./views/"+name);
 };
 
 io.on('connection', (socket) => {
@@ -43,7 +43,7 @@ files1.forEach( function (item)
 socket.on('listenerone',(anything)=>{
   console.log(anything);});
 socket.on('upfile',(filenamee)=>{
-  fs.writeFile('./uploads/'+ filename, filedata, function(err) {
+  fs.writeFile('./views/'+ filename, filedata, function(err) {
       if(err) {
           return console.log(err);
       }
