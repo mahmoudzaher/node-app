@@ -4,6 +4,7 @@ const hbs = require('hbs');
 const socketIO=require('socket.io');
 const http =require('http');
 const fs= require('fs');
+const port =process.env.PORT || 3000 ;
 var new1 =express();
 var server =http.createServer(new1);
 var io = socketIO(server);
@@ -81,7 +82,9 @@ res.render('dynamic.hbs');
 });
 
 
-server.listen(3000);
+server.listen(port,()=>{
+  console.log('server at '+port);
+});
 new1.use((req,res,next)=>{
   res.send('page not found');
   next();
